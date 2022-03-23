@@ -1,0 +1,559 @@
+Apr. 13 chrome
+F5
+54FCB3A4EAE0
+54FCB40716E8
+54FCB40716EC
+54FCB4071758
+54FCB407175C
+
+2 related code:
+174E8AA876B4 - 43 89 1C 19           - mov [r9+r11],ebx
+174E8948CD21 - 44 89 24 3B           - mov [rbx+rdi],r12d
+
+174E8AA876B1 - 8D 78 04              - lea edi,[rax+04]
+174E8AA876B4 - 43 89 1C 19           - mov [r9+r11],ebx
+174E8AA876B8 - 41 8B 1C 39           - mov ebx,[r9+rdi]
+174E8AA876BC - 41 8B 3C 19           - mov edi,[r9+rbx]
+174E8AA876C0 - 83 C7 40              - add edi,40
+174E8AA876C3 - 44 8D 40 68           - lea r8d,[rax+68]
+174E8AA876C7 - 45 8D 58 0B           - lea r11d,[r8+0B]
+174E8AA876CB - 41 8B 3C 39           - mov edi,[r9+rdi]
+174E8AA876CF - 47 0FBE 1C 19         - movsx r11d,byte ptr [r9+r11]
+
+174E8948CD10 - 44 8D 4A 04           - lea r9d,[rdx+04]
+174E8948CD14 - 44 8D 5F 04           - lea r11d,[rdi+04]
+174E8948CD18 - 44 8B E2              - mov r12d,edx
+174E8948CD1B - 46 8B 24 23           - mov r12d,[rbx+r12]
+174E8948CD1F - 8B FF                 - mov edi,edi
+174E8948CD21 - 44 89 24 3B           - mov [rbx+rdi],r12d
+174E8948CD25 - 49 8B D1              - mov rdx,r9
+174E8948CD28 - 49 8B FB              - mov rdi,r11
+174E8948CD2B - 4C 8B 4E 23           - mov r9,[rsi+23]
+174E8948CD2F - 49 3B 21              - cmp rsp,[r9]
+174E8948CD32 - 0F86 4B010000         - jbe 174E8948CE83
+174E8948CD38 - 41 3B F8              - cmp edi,r8d
+174E8948CD3B - 7C D3                 - jl 174E8948CD10
+
+===================================================================================
+steps:
+
+54FCB3B9985C
+54FCB5AA11D0
+
+related code:
+174E8B7BE066 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+174E8B8B8FDA - 4E 89 3C 37           - mov [rdi+r14],r15
+
+174E8B7BE047 - 4C 8B 65 B8           - mov r12,[rbp-48]
+174E8B7BE04B - 48 8B 45 E8           - mov rax,[rbp-18]
+174E8B7BE04F - 48 8B 7D D0           - mov rdi,[rbp-30]
+174E8B7BE053 - 4C 8B 4D C0           - mov r9,[rbp-40]
+174E8B7BE057 - 4C 8B 9C 1F 94000000  - mov r11,[rdi+rbx+00000094]
+174E8B7BE05F - 45 8D B1 9C000000     - lea r14d,[r9+0000009C]
+174E8B7BE066 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+174E8B7BE06E - 44 8D 98 9C000000     - lea r11d,[rax+0000009C]
+174E8B7BE075 - 4E 8B 24 33           - mov r12,[rbx+r14]
+174E8B7BE079 - 4E 89 24 1B           - mov [rbx+r11],r12
+174E8B7BE07D - 4D 8B 64 1E 08        - mov r12,[r14+rbx+08]
+174E8B7BE082 - 4D 89 64 1B 08        - mov [r11+rbx+08],r12
+
+174E8B8B8FC3 - 48 8B 55 D0           - mov rdx,[rbp-30]
+174E8B8B8FC7 - 4C 8B C2              - mov r8,rdx
+174E8B8B8FCA - 45 8D 48 1C           - lea r9d,[r8+1C]
+174E8B8B8FCE - 4C 8B E0              - mov r12,rax
+174E8B8B8FD1 - 45 8D 74 24 1C        - lea r14d,[r12+1C]
+174E8B8B8FD6 - 4E 8B 3C 0F           - mov r15,[rdi+r9]
+174E8B8B8FDA - 4E 89 3C 37           - mov [rdi+r14],r15
+174E8B8B8FDE - 45 8B 4C 39 08        - mov r9d,[r9+rdi+08]
+174E8B8B8FE3 - 45 89 4C 3E 08        - mov [r14+rdi+08],r9d
+
+===================================================================================
+May 7 firefox
+F5
+1E100DECEB8
+1E100DECEBC
+1E100DED758
+1E100DED75C
+
+1E100DF9730
+
+3 related code:
+C5CF020265 - 41 89 04 0F           - mov [r15+rcx],eax
+
+C5D1CEA749 - 41 89 34 0F           - mov [r15+rcx],esi
+C5D0778F7D - 41 89 0C 07           - mov [r15+rax],ecx  // similar to mov [esi+08],00001B4E
+===================================================================================
+June 28 Opera
+Total moves: 818E13FC
+access code:	79B01A81 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+			->	jmp 70023FBC
+70023FBC
+AcLayers.DLL+43FBC - D1 E7                 - shl edi,1
+AcLayers.DLL+43FBE - 89 BC 08 94000000     - mov [eax+ecx+00000094],edi
+AcLayers.DLL+43FC5 - E9 BCDAAD09           - jmp 79B01A88
+===================================================================================
+June 29 Opera
+Bomb count: 83396784
+access code:	7F1028C4 - 89 74 0A 1C           - mov [edx+ecx+1C],esi
+
+Total moves: 81924CC4
+write code:	64295361 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+			
+read code:	6442F128 - 8B B4 07 94000000     - mov esi,[edi+eax+00000094]
+
+6442F128 - 8B B4 07 94000000     - mov esi,[edi+eax+00000094]
+6442F12F - 89 75 DC              - mov [ebp-24],esi
+
+6442F153 - 8B 7D DC              - mov edi,[ebp-24]
+6442F156 - 89 BC 06 94000000     - mov [esi+eax+00000094],edi
+
+6442F1A1 - 8B 75 D8              - mov esi,[ebp-28]  
+6442F1A4 - 8B 74 06 08           - mov esi,[esi+eax+08]	// 0, count moves ? 
+
+643F7664 - 8B BC 08 94000000     - mov edi,[eax+ecx+00000094]
+643F766B - 3B 75 D4              - cmp esi,[ebp-2C]
+643F766E - 0F83 46050000         - jae 643F7BBA
+643F7674 - 89 7D D8              - mov [ebp-28],edi
+
+643F768D - 8B 45 D8              - mov eax,[ebp-28]
+643F7690 - 89 84 0E 94000000     - mov [esi+ecx+00000094],eax
+
+64431D96 - 0FBE 14 3E            - movsx edx,byte ptr [esi+edi]
+
+64431DA8 - 33 D1                 - xor edx,ecx
+64431DAA - 89 4D B8              - mov [ebp-48],ecx
+64431DAD - 88 14 3E              - mov [esi+edi],dl	 // key memory to store step 
+
+BF2B74B4 - 33 55 CC              - xor edx,[ebp-34]  // already moved steps
+===================================================================================
+read key byte:                                                   times:
+BF1AB01A - 0FBE 0C 3E            - movsx ecx,byte ptr [esi+edi]  1
+
+BF2B734D - 0FBE 04 3A            - movsx eax,byte ptr [edx+edi]  1078
+
+BF0A0703 - 0FBE 04 0A            - movsx eax,byte ptr [edx+ecx]  706
+
+64B25E5B - 0FBE 14 38            - movsx edx,byte ptr [eax+edi]  1
+===================================================================================
+June 29 Opera 80000 ~ 24D000
+Bomb:	C1C6E354
+	800BA4D6 - 89 74 17 04           - mov [edi+edx+04],esi
+	66722553 - 89 34 3A              - mov [edx+edi],esi
+
+Moves:	C094735C
+	679B93C1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+===================================================================================
+	67B49F68 - 8B B4 07 94000000     - mov esi,[edi+eax+00000094]
+	67B49F6F - 89 75 DC              - mov [ebp-24],esi
+
+	67B49F93 - 8B 7D DC              - mov edi,[ebp-24]
+	67B49F96 - 89 BC 06 94000000     - mov [esi+eax+00000094],edi
+===================================================================================
+June 29 Opera C50000 ~ E1D000
+
+Bomb:	C3409414
+	65F7B364 - 89 74 0A 1C           - mov [edx+ecx+1C],esi
+
+F5:	C0FFE370
+	66FEF1EF - 89 04 39              - mov [ecx+edi],eax  // eax = 1B58 {7000}
+	65F7B4B2 - 89 04 17              - mov [edi+edx],eax
+
+Moves:	C091B76C
+	782DC7A1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+
+Gold:	BFC059B8, C0861060, C0C30DA8
+	6659496C - 89 04 3A              - mov [edx+edi],eax
+	6659496F - 3B CE                 - cmp ecx,esi
+	66594971 - 0F83 08020000         - jae 66594B7F
+
+Hummer: C0C87AB8, C0C87ABC
+===================================================================================
+July 1 Opera c0000 ~ 28d000 len=1cd000
+
+Bomb:	84021DFC
+
+F5:	81477F30
+
+Moves:	818F467C
+	167053C1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+
+Hummer: 81A96548
+	6AF42BEC - 89 14 38              - mov [eax+edi],edx
+===================================================================================
+167053C1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+
+1689C248 - 8B B4 07 94000000     - mov esi,[edi+eax+00000094]
+1689C24F - 89 75 DC              - mov [ebp-24],esi
+
+1689C273 - 8B 7D DC              - mov edi,[ebp-24]
+1689C276 - 89 BC 06 94000000     - mov [esi+eax+00000094],edi
+
+16867C44 - 8B BC 08 94000000     - mov edi,[eax+ecx+00000094]
+16867C4B - 3B 75 D4              - cmp esi,[ebp-2C]
+16867C4E - 0F83 46050000         - jae 1686819A
+16867C54 - 89 7D D8              - mov [ebp-28],edi
+
+16867C6D - 8B 45 D8              - mov eax,[ebp-28]
+16867C70 - 89 84 0E 94000000     - mov [esi+ecx+00000094],eax
+
+1689ED76 - 0FBE 14 3E            - movsx edx,byte ptr [esi+edi]
+...
+1689ED88 - 33 D1                 - xor edx,ecx
+1689ED8A - 89 4D B8              - mov [ebp-48],ecx
+1689ED8D - 88 14 3E              - mov [esi+edi],dl
+
+167C350D - 0FBE 04 3A            - movsx eax,byte ptr [edx+edi]
+
+167C3674 - 33 55 CC              - xor edx,[ebp-34]
+===================================================================================
+July 5 Opera 20000 ~ 1ED000 length = 1CD000
+
+F5:	82044550
+
+Moves:	818DBBEC
+	6A9089A1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi
+[F5]
+	6AA92048 - 8B B4 07 94000000     - mov esi,[edi+eax+00000094]
+	6AA9204F - 89 75 DC              - mov [ebp-24],esi
+
+	6AA92073 - 8B 7D DC              - mov edi,[ebp-24]
+	6AA92076 - 89 BC 06 94000000     - mov [esi+eax+00000094],edi
+[F5]
+	6AA5CD64 - 8B BC 08 94000000     - mov edi,[eax+ecx+00000094]
+	6AA5CD6B - 3B 75 D4              - cmp esi,[ebp-2C]
+	6AA5CD6E - 0F83 46050000         - jae 6AA5D2BA
+	6AA5CD74 - 89 7D D8              - mov [ebp-28],edi
+
+	6AA5CD8D - 8B 45 D8              - mov eax,[ebp-28]
+	6AA5CD90 - 89 84 0E 94000000     - mov [esi+ecx+00000094],eax
+[F5]
+	6AA94056 - 0FBE 14 3E            - movsx edx,byte ptr [esi+edi]
+
+	6AA94068 - 33 D1                 - xor edx,ecx
+	6AA9406A - 89 4D B8              - mov [ebp-48],ecx
+	6AA9406D - 88 14 3E              - mov [esi+edi],dl
+[F5]
+	6AE95FAD - 0FBE 04 3A            - movsx eax,byte ptr [edx+edi]
+	6AE95FB1 - 3B F1                 - cmp esi,ecx
+	6AE95FB3 - 0F83 F01E0000         - jae 6AE97EA9
+	6AE95FB9 - 89 45 CC              - mov [ebp-34],eax  // [05ABEB78]
+
+	6AE96114 - 33 55 CC              - xor edx,[ebp-34]
+
+	6AE96117 - 33 C8                 - xor ecx,eax
+	6AE96119 - 81 E7 FF000000        - and edi,000000FF
+	6AE9611F - C1 E6 08              - shl esi,08
+	6AE96122 - 81 E2 FF000000        - and edx,000000FF
+	6AE96128 - 81 E1 FF000000        - and ecx,000000FF
+	6AE9612E - C1 E7 10              - shl edi,10
+	6AE96131 - 0B F2                 - or esi,edx
+	6AE96133 - C1 E1 18              - shl ecx,18
+	6AE96136 - 0B FE                 - or edi,esi
+	6AE96138 - 0B CF                 - or ecx,edi
+	6AE9613A - 8B 75 D0              - mov esi,[ebp-30]
+	6AE9613D - 2B F1                 - sub esi,ecx			// left moves
+	6AE9613F - 89 F7                 - mov edi,esi
+	6AE96141 - 8B 75 F8              - mov esi,[ebp-08]
+	6AE96144 - 8B 45 EC              - mov eax,[ebp-14]
+	6AE96147 - 89 FA                 - mov edx,edi
+	6AE96149 - E8 50EC520C           - call 773C4D9E
+
+	6AE7D160 - 55                    - push ebp
+	6AE7D161 - 89 E5                 - mov ebp,esp
+	6AE7D163 - 6A 08                 - push 08
+	6AE7D165 - 56                    - push esi
+	6AE7D166 - 83 EC 48              - sub esp,48
+	6AE7D169 - 8B 7E 17              - mov edi,[esi+17]
+	6AE7D16C - 89 45 EC              - mov [ebp-14],eax
+	6AE7D16F - 89 D1                 - mov ecx,edx
+	6AE7D171 - 89 55 DC              - mov [ebp-24],edx		// left moves
+
+	6AE7D294 - 3B 75 DC              - cmp esi,[ebp-24]		// check whether the step was modified
+	6AE7D297 - 0F84 A5020000         - je 6AE7D542
+===================================================================================
+61296B2C XXX
+	opera_browser.dll+2E66B2C - D1 E7                 - shl edi,1
+	opera_browser.dll+2E66B2E - 89 BC 08 94000000     - mov [eax+ecx+00000094],edi
+	opera_browser.dll+2E66B35 - E9 671E6709           - jmp 6A9089A1
+
+===================================================================================
+July 6 Chrome 7ff68c7d0000 ~ 7ff68ca18000 length = 248000
+ XXX
+F5:	102928722660
+
+Moves:	1029288DCA54
+	1E9985306306 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+	->  jmp 7FF68C83D994
+Injection: 7FF68C83D994
+	chrome.exe+6D994 - 49 D1 E3              - shl r11,1
+	chrome.exe+6D997 - 4E 89 9C 23 94000000  - mov [rbx+r12+00000094],r11
+	chrome.exe+6D99F - FF25 00000000 0E633085991E0000 - jmp 1E998530630E
+===================================================================================
+July 6 Chrome 7ff68c7d0000 ~ 7ff68ca18000 length = 248000
+ XXX
+Moves 2 places:	
+		94A1F1D4664
+			18B41AD3C366 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+		94A20B68780
+			18B41AE3777A - 4E 89 3C 37   - mov [rdi+r14],r15
+===================================================================================
+July 6 Chrome 7ff68c7d0000 ~ 7ff68ca18000 length = 248000
+ XXX
+Moves :	
+	63EA48BDA294
+		69FBB9928266 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+		69FBB992826E - 44 8D 98 9C000000     - lea r11d,[rax+0000009C]
+		69FBB9928275 - 4E 8B 3C 33           - mov r15,[rbx+r14]
+		==> jmp 7FFA0945F4FE
+
+	519C021E48C0
+
+Injection: winspool.drv cave + 16 bytes: 
+	7FFA0945F4FE
+	WINSPOOL.DRV+4F4FE - 49 D1 E3              - shl r11,1
+	WINSPOOL.DRV+4F501 - 4E 89 9C 23 94000000  - mov [rbx+r12+00000094],r11
+	WINSPOOL.DRV+4F509 - FF25 00000000 6E8292B9FB690000 - jmp 69FBB992826E
+===================================================================================
+July 8 Firefox 7ff761880000 ~ 7ff761919000 length = 99000
+ 
+F5:		17E81E6E880
+Moves :	17E816359EC
+		14EF3423ECB - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+		==> nop
+
+Bomb1:	180031EB9EC
+	test case: 5190(16),5194(12),5232(25),5264(17),
+		1BC9FA13A2F - 41 C7 84 07 B4000000 FFFFFFFF - mov [r15+rax+000000B4],FFFFFFFF
+
+Bomb2:	180045E3394
+	test case: 5021(18),5190(16),5194(12),5290(20),5204(15),
+		1BCA950357E - 41 89 7C 0F 1C        - mov [r15+rcx+1C],edi
+===================================================================================
+July 9 Firefox 7ff76d740000 ~ 7ff76d7d9000 length = 99000
+ 
+F5:		183D4AB7770
+Moves :	183D427EDC4
+		304BA79428B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+		==> nop
+===================================================================================
+July 9 Chrome 7ff75aeb0000 ~ 7ff75b0f8000 length = 248000
+ 
+F5:		48E734387020
+Moves :	48E732D56004
+		2CD773FAC026 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+		==> nop
+
+Bomb1:	48E7364DC7EC
+	test case: 1051(20),1070(15),1107(20)
+		2CD77141E836 - 44 89 7C 1F 1C        - mov [rdi+rbx+1C],r15d
+===================================================================================
+July 10 Chrome 7ff75B0F8000 ~ 7ff75aeb0000 length = 248000
+ 
+F5:		3A41C5BD5DF0
+Moves :	3A41C51EADB4
+		77CF27CB8D26 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+		==> nop
+
+Bomb1:	48E7364DC7EC
+	test case: 1051(20),1070(15),1107(20)
+		2CD77141E836 - 44 89 7C 1F 1C        - mov [rdi+rbx+1C],r15d
+===================================================================================
+July 10 Firefox 
+ 
+F5:		2098312BA50
+Moves :	209816F60AC
+		20F7F13B4B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+		==> nop
+===================================================================================
+July 11 Firefox 
+ 
+F5:		20802669210
+Moves :	2080100D3FC
+		20F7EF428B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+		==> nop
+===================================================================================
+July 12 Firefox 
+ 
+F5:		20802669210
+Moves :	20E7E167174
+		3760032215B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+		==> nop
+		20E8157A490
+		376002D970E - 49 89 14 07           - mov [r15+rax],rdx
+Bomb:	20E8157A8B4
+		37602BB401E - 41 89 7C 0F 1C        - mov [r15+rcx+1C],edi
+		test case: 5021(18),5194(12),5232(25),5290(20),5720(25)
+===================================================================================
+July 13 Opera
+
+Bomb:	20E8033CD50
+	7EAD5D72 - 8B 74 0F 1C           - mov esi,[edi+ecx+1C]
+	...
+	7EAD5D84 - 89 74 0A 1C           - mov [edx+ecx+1C],esi
+		test case: 5000(50),5021(18),5194(12),5232(25),
+===================================================================================
+July 21 Firefox
+
+F5:		17E22594610
+Moves :	1BC80B1A59C
+	169DE20428B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+		1BC822B8200
+	169DE1B970E - 49 89 14 07           - mov [r15+rax],rdx
+===================================================================================
+July 23 Firefox
+
+F5:		17E22594610
+Moves :	1C8A31E78E4
+	3A1DC059A2B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+July 29 Firefox
+
+F5:		24DACC53050
+Moves :	24DAC538494
+	AAD425889B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax ==> nop
+===================================================================================
+Aug 3 Chrome
+
+F5:		6163D9F398E0
+Moves:	6163D99434C4
+	283AD4E9F086 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11 ==> nop
+===================================================================================
+Aug 4 Opera
+
+F5:		81F08100
+Moves:	8188412C
+	BF6BC8A1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi ==> nop
+===================================================================================
+Aug 9 Opera
+
+F5:		C0740EF0
+Moves:	C0950ACC
+	8A7663E1 - 89 BC 01 94000000     - mov [ecx+eax+00000094],edi 
+===================================================================================
+Aug 10 Chrome
+
+F5:		5A76BD5D6E90
+Moves:	5A76BCFE1FAC
+	4C59E1377046 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11 
+===================================================================================
+Aug 11 Firefox
+
+F5:		24BF8558530
+Moves :	24BF754964C
+	22F0187B2AB - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+Aug 12 Firefox
+
+F5:		1C401D950E8
+Moves:	1C40192D5C4
+	1D6CAD1BA3B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax 
+===================================================================================
+Aug 12 Opera 00660000 ~ 0082d000
+
+Party: Aug. 11 12pm ~ Aug. 16 3am
+Party + 1:	81D29288
+	C0F849E6 - 83 E9 04              - sub ecx,04 
+	C0F849E9 - 8B 55 E4              - mov edx,[ebp-1C]
+*	C0F849EC - 89 14 38              - mov [eax+edi],edx
+	C0F849EF - 3B F1                 - cmp esi,ecx
+	C0F849F1 - 0F83 59000000         - jae C0F84A50
+	C0F849F7 - C6 44 3E 04 01        - mov byte ptr [esi+edi+04],01
+	C0F849FC - 8B 75 F8              - mov esi,[ebp-08]
+	C0F849FF - 8B 45 EC              - mov eax,[ebp-14]
+	C0F84A02 - E8 FC3FADB5           - call 77D58F23
+	C0F84A07 - 8B 7D F4              - mov edi,[ebp-0C]
+	C0F84A0A - 8B 45 F0              - mov eax,[ebp-10]
+	C0F84A0D - 89 78 48              - mov [eax+48],edi
+	C0F84A10 - B8 01000000           - mov eax,00000001
+	C0F84A15 - 89 EC                 - mov esp,ebp
+	C0F84A17 - 5D                    - pop ebp
+	C0F84A18 - C3                    - ret 
+
+Party + 1:	81C5AFC8 81C5AFCC
+	BFDA104C - 89 14 38              - mov [eax+edi],edx
+
+Party + 1:	C0C63738 C0C6373C
+	80BD6CEC - 89 14 38              - mov [eax+edi],edx
+
+Party + 1:	81D2C6D8 81D2C6DC
+	C2284F0C - 89 14 38              - mov [eax+edi],edx
+
+Party + 1:	81C5ED08 81C5ED0C
+	BF9836EC - 89 14 38              - mov [eax+edi],edx
+
+===================================================================================
+Aug 13 Chrome
+
+F5:		57F226142DA0 - 60035C
+Moves:	57F225B42A44
+	5E7550EE6CE6 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11 
+===================================================================================
+Aug 14 Chrome
+
+F5:		4C610E656100 - 82ABEC
+Moves:	4C610DE2B514
+	6901686E1E26 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11 
+===================================================================================
+Aug 16 Firefox
+
+F5:		1B9C118C6D8
+Moves:	1B9C043E73C
+	57C340B25B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax 
+===================================================================================
+Aug 17 Firefox
+
+F5:		26D82302BE0
+Moves:	26D818997B4
+	14BF0AC91B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax 
+===================================================================================
+Aug 18 Firefox
+
+F5:		26D82302BE0
+Moves:	28E09D7CE44
+	2DCCAEFC18B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+Aug 19 Firefox
+
+F5:		29401F332D0
+Moves:	2940171C59C
+	353EFFEC18B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+Aug 19 Opera
+
+F5:		81F42C70
+Moves:	18631F40
+	BF05CE2B - 89 94 07 94000000     - mov [edi+eax+00000094],edx
+===================================================================================
+Aug 20 Chrome
+
+F5:		6F595F42D150
+Moves:	6F595ED7255C
+	2E58142C5406 - 4D 89 9C 1C 94000000  - mov [r12+rbx+00000094],r11
+===================================================================================
+Aug 21 Firefox
+
+F5:		279DB4C2110
+Moves:	279DB7013FC
+	157EA35C18B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+Aug 24 Firefox
+
+F5:		293DD7614C0
+Moves:	293DD71AB34
+	2DDAA3EC91B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+Aug 25 Firefox
+
+F5:		25D7C751410
+Moves:	25D7C82404C
+	316D603C18B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+Aug 26 Firefox
+
+F5:		2046385A330
+Moves:	204634B354C
+	32485A6C91B - 49 89 84 0F 94000000  - mov [r15+rcx+00000094],rax
+===================================================================================
+===================================================================================
+
+
